@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641377, b: 0.57481784, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657922, g: 0.49641407, b: 0.5748184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74705634}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -535,6 +535,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054851b5884094261a14f8b30b1b3e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 1481753479343843993, guid: de25bdd209537e5419bf361b89bf0f73,
+      type: 3}
+    cost: 10
+  missleLauncher:
+    prefab: {fileID: 5442266597632989066, guid: 988bb1d8f375f4c79b681047b37922c9,
+      type: 3}
+    cost: 20
 --- !u!1001 &79344760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1167,7 +1175,7 @@ PrefabInstance:
     - target: {fileID: 4242801662889451277, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_Name
-      value: Another Turret Item
+      value: Missle Launcher Item
       objectReference: {fileID: 0}
     - target: {fileID: 4242801662889451276, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
@@ -1237,12 +1245,12 @@ PrefabInstance:
     - target: {fileID: 4242801662889451276, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 81.27
       objectReference: {fileID: 0}
     - target: {fileID: 4242801662889451276, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 81.27
       objectReference: {fileID: 0}
     - target: {fileID: 4242801662889451276, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
@@ -1282,13 +1290,19 @@ PrefabInstance:
     - target: {fileID: 4242801662889451265, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4242801662889451265, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4242801662889451265, guid: 33667199071d6425c9b6d6a16ee7be81,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aaffbaec98111fd4397a2f7ed7c97da5,
+        type: 3}
     - target: {fileID: 4242801662889451278, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1312,7 +1326,7 @@ PrefabInstance:
     - target: {fileID: 4242801662889451278, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseAnotherTurret
+      value: PurchaseMissleLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 4242801662889451278, guid: 33667199071d6425c9b6d6a16ee7be81,
         type: 3}
@@ -8926,10 +8940,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 99.28
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 570, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -9955,10 +9969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3314c9f4af84e26aa1ead6f879dab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 1481753479343843993, guid: de25bdd209537e5419bf361b89bf0f73,
-    type: 3}
-  anotherTurretPrefab: {fileID: 5442266597632989066, guid: 988bb1d8f375f4c79b681047b37922c9,
-    type: 3}
 --- !u!1001 &1123720788
 PrefabInstance:
   m_ObjectHideFlags: 0

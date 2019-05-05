@@ -9,6 +9,7 @@ public class BulletScript : MonoBehaviour
 
     public GameObject impactEffect;
 
+    public float explosionRadius = 0f;
     public float bulletSpeed = 3f;
 
     // Start is called before the first frame update
@@ -39,6 +40,7 @@ public class BulletScript : MonoBehaviour
 
 
         transform.Translate(dir.normalized * distanceThisFram, Space.World);
+        transform.LookAt(targetPos);
     }
 
 
@@ -54,8 +56,45 @@ public class BulletScript : MonoBehaviour
     void HitTarget() {
         //Debug.Log("Hit Target!");
         GameObject efectInst = Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(efectInst, 2f);
+        Destroy(efectInst, 5f);
+
+        if (explosionRadius > 0f)
+        {
+            Explode();
+
+        }
+        else {
+            Damage(targetPos);
+
+        }
+
+        
         Destroy(gameObject);
      
        }
+
+
+
+    void Damage(Transform enemy) {
+
+        Destroy(enemy.gameObject);
+    }
+
+    void Explode() {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider c in colliders) {
+            if (c.gameObject.tag == "Enemy") {
+                Damage(c.transform);
+
+            }
+        }
+    }
+
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
 }
